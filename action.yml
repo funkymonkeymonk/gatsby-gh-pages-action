@@ -19,6 +19,10 @@ inputs:
     description: "Additional arguments that get passed to `gatsby build`."
     required: false
     default: ""
+  skip-optional-dependencies:
+    description: "Skips installing optional dependencies"
+    required: false
+    default: false
   skip-publish:
     description: "Skips publishing - performs build/test"
     required: false
