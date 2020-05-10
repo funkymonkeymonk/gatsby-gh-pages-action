@@ -25,9 +25,9 @@ async function run() {
 
     const pkgManager = (await ioUtil.exists("./yarn.lock")) ? "yarn" : "npm"
     if (pkgManager === "yarn") {
-      const ignoreOptional = (core.getInput("ignore-optional") ? "--ignore-optional" : ""
+      const ignoreOptional = (core.getInput("ignore-optional")) ? "--ignore-optional" : ""
     } else {
-      const ignoreOptional = (core.getInput("ignore-optional") ? "--no-optional" : ""
+      const ignoreOptional = (core.getInput("ignore-optional")) ? "--no-optional" : ""
     }
     console.log(`Installing your site's dependencies using ${pkgManager}.`)
     await exec.exec(`${pkgManager} install ${ignoreOptional}`)
